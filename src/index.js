@@ -4,9 +4,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import { KanbanProvider } from './context/KanbanContext';
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <KanbanProvider>
+      <App />
+    </KanbanProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
