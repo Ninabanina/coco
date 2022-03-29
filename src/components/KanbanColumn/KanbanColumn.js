@@ -5,7 +5,7 @@ import { Droppable } from 'react-beautiful-dnd';
 
 const KanbanColumn = ({ column, coords }) => {
   return (
-    <>
+    <div className={styles.container}>
       <h3 className={styles.title}>{column.title}</h3>
       <Droppable droppableId={column.id}>
         {(provided, snapshot) => (
@@ -25,7 +25,7 @@ const KanbanColumn = ({ column, coords }) => {
           </div>
         )}
       </Droppable>
-    </>
+    </div>
   );
 };
 

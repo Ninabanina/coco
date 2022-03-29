@@ -20,8 +20,18 @@ const kanbanData = {
         'coord-6',
       ],
     },
+    'column-2': {
+      id: 'column-2',
+      title: 'Doing',
+      coordIds: [],
+    },
+    'column-3': {
+      id: 'column-3',
+      title: 'Done',
+      coordIds: [],
+    },
   },
-  columnOrder: ['column-1'],
+  columnOrder: ['column-1', 'column-2', 'column-3'],
 };
 
 export default kanbanData;

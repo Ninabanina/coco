@@ -1,8 +1,9 @@
 import React from 'react';
-import { Layout, Menu, Row, Col, Result } from 'antd';
+import { Layout, Menu } from 'antd';
 import { TeamOutlined } from '@ant-design/icons';
 
 import { DragDropContext } from 'react-beautiful-dnd';
+import styles from './App.module.scss';
 
 import { members } from './data/members';
 import { Column, onDragEnd } from './context/KanbanContext';
@@ -63,14 +64,8 @@ const App = () => {
                   onDragEnd(result, kanbanData, setKanbanData)
                 }
               >
-                <Content style={{ margin: '24px 16px 0' }}>
-                  <div className='site-layout-background kanban-container'>
-                    <Row>
-                      <Col span={8}>
-                        <Column />
-                      </Col>
-                    </Row>
-                  </div>
+                <Content>
+                  <Column />
                 </Content>
               </DragDropContext>
             );
