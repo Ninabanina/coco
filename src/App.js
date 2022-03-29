@@ -2,17 +2,14 @@ import React from 'react';
 import { Layout, Menu } from 'antd';
 import { TeamOutlined } from '@ant-design/icons';
 
-import { DragDropContext } from 'react-beautiful-dnd';
-import styles from './App.module.scss';
+import Kanban from './components/Kanban';
 
 import { members } from './data/members';
-import { Column, onDragEnd } from './context/KanbanContext';
-import KanbanContext from './context/KanbanContext';
 
 import './App.css';
 
 const App = () => {
-  const { Header, Content, Footer, Sider } = Layout;
+  const { Header, Footer, Sider } = Layout;
   const { SubMenu } = Menu;
 
   const blueTeamMembers = members.filter((member) => member.team === 'Blue');
@@ -56,24 +53,7 @@ const App = () => {
         />
 
         {/* Kanban start */}
-        <KanbanContext.Consumer>
-          {([kanbanData, setKanbanData]) => {
-            return (
-              <DragDropContext
-                onDragEnd={(result) =>
-                  onDragEnd(result, kanbanData, setKanbanData)
-                }
-              >
-                <Content>
-                  <div className={styles.kanban__container}>
-                    <Column />
-                  </div>
-                </Content>
-              </DragDropContext>
-            );
-          }}
-        </KanbanContext.Consumer>
-
+        <Kanban />
         {/* Kanban end */}
 
         <Footer style={{ textAlign: 'center' }}>
