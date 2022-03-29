@@ -3,11 +3,11 @@
 }
 
 .container {
-  border: 1px solid lightgrey;
-  border-radius: 2px;
-  padding: 8px;
-  margin-bottom: 8px;
-  background-color: white;
+  margin-top: 0.8rem;
+  background-color: #fff;
+  border-bottom: 2px solid #cfe3f5;
+  border-radius: 4px;
+  padding: 1.6rem;
 }
 
 .isDragging {
@@ -16,4 +16,27 @@
 
 .notDragging {
   background-color: white;
+}
+
+.people__list {
+  display: inline-flex;
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
+  list-style: none;
+}
+
+.people__list__item {
+  margin-right: 5px;
+
+  &::after {
+    content: '|';
+    margin-left: 5px;
+    font-weight: bold;
+    color: lightgrey;
+  }
+
+  &:last-child::after {
+    content: none;
+  }
 }

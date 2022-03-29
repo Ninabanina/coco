@@ -65,7 +65,9 @@ const App = () => {
                 }
               >
                 <Content>
-                  <Column />
+                  <div className={styles.kanban__container}>
+                    <Column />
+                  </div>
                 </Content>
               </DragDropContext>
             );

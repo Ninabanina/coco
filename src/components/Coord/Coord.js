@@ -15,6 +15,16 @@ const Coord = ({ coord, index }) => {
           }`}
         >
           <h3 className={styles.title}>{coord.content}</h3>
+          <ul class={styles.people__list}>
+            {coord.people.map((people, index) => (
+              <li
+                class={styles.people__list__item}
+                key={`coord-${people}${index}`}
+              >
+                {people}
+              </li>
+            ))}
+          </ul>
         </div>
       )}
     </Draggable>
