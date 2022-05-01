@@ -12,6 +12,15 @@
   background: #fff;
 }
 
+.ant-layout-content {
+  height: 100%;
+}
+
+.ant-layout-content > div:first-child {
+  height: 100%;
+  padding: 2%;
+}
+
 .ant-row {
   height: 100%;
 }

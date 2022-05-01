@@ -30,6 +30,16 @@ const kanbanData = {
       content: 'AA Bulk post status update',
       people: ['Seb', 'Sergio'],
     },
+    'coord-7': {
+      id: 'coord-7',
+      content: 'reCaptcha question (VSBC)',
+      people: ['James', 'Rache', 'Sergio'],
+    },
+    'coord-8': {
+      id: 'coord-8',
+      content: 'Content process question',
+      people: ['Isabella', 'Elliott'],
+    },
   },
   columns: {
     'column-1': {
@@ -42,6 +52,8 @@ const kanbanData = {
         'coord-4',
         'coord-5',
         'coord-6',
+        'coord-7',
+        'coord-8',
       ],
     },
     'column-2': {

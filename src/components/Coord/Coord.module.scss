@@ -11,11 +11,11 @@
 }
 
 .isDragging {
-  background-color: pink;
+  box-shadow: 0 5px 20px #cfe3f5, 0 3px 6px #cfe3f5;
 }
 
 .notDragging {
-  background-color: white;
+  box-shadow: none;
 }
 
 .people__list {

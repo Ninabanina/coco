@@ -10,11 +10,7 @@ const KanbanColumn = ({ column, coords }) => {
       <Droppable droppableId={column.id}>
         {(provided, snapshot) => (
           <div
-            className={`${styles.tasklist} ${
-              snapshot.isDraggingOver
-                ? styles.isDraggingOver
-                : styles.notDraggingOver
-            }`}
+            className={styles.tasklist}
             ref={provided.innerRef}
             {...provided.droppableProps}
           >

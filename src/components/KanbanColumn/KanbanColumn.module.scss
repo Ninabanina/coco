@@ -14,19 +14,12 @@
   overflow: hidden;
   background-color: rgba(207, 227, 245, 0.12);
   border: 1px solid #d7e8f7;
+  overflow: auto;
 }
 
 .tasklist {
   padding: 0 8px 8px 8px;
   transition: background-color 0.2s ease;
   flex-grow: 1;
-  background-color: #f4f8fe;
-}
-
-.isDraggingOver {
-  background-color: skyblue;
-}
-
-.notDraggingOver {
   background-color: #f4f8fe;
 }
