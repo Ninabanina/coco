@@ -1,33 +1,52 @@
-import { createContext, useContext, useState } from 'react';
-import KanbanColumn from '../components/KanbanColumn';
+import { createContext, useContext, useReducer } from 'react';
 import kanbanData from '../data/kanban-data';
-
-import styles from './KanbanContext.module.scss';
-
 const KanbanContext = createContext();
 
-export function KanbanProvider({ children }) {
-  const [kanbanState, setKanbakState] = useState(kanbanData);
-  return (
-    <KanbanContext.Provider value={[kanbanState, setKanbakState]}>
-      {children}
-    </KanbanContext.Provider>
-  );
+const initialState = {
+  coords: kanbanData.coords,
+  filter: kanbanData.filter,
 }
 
-export function Column() {
-  const [kanbanData] = useContext(KanbanContext);
-  return (
-    <div className={styles.container}>
-      {kanbanData.columnOrder.map((columnId) => {
-        const column = kanbanData.columns[columnId];
-        const coords = column.coordIds.map(
-          (coordId) => kanbanData.coords[coordId]
-        );
+const reducer = (state, action) => {
+  switch (action.type) {
+    case 'MOVE_COORD':
+      const { coordId, newColumn } = action;
+      const newCoords = [...state.coords.map((coord) => {
+        if (coord.id === coordId) {
+          return { ...coord, column: newColumn }
+        } else {
+          return coord
+        }
+      })];
 
-        return <KanbanColumn key={column.id} column={column} coords={coords} />;
-      })}
-    </div>
+      return {
+        ...state,
+        coords: newCoords,
+      };
+
+    case 'FILTER_COORD':
+      return {
+        ...state,
+        filter: action.filter,
+      };
+    default:
+      throw new Error();
+  }
+}
+
+export const useKanbanContext = () => {
+  return useContext(KanbanContext);
+}
+
+export function KanbanProvider({ children }) {
+  // const [kanbanState, setKanbakState] = useState(kanbanData);
+
+  const [kanbanState, kanbanDispatch] = useReducer(reducer, initialState);
+
+  return (
+    <KanbanContext.Provider value={{ kanbanState, kanbanDispatch }}>
+      {children}
+    </KanbanContext.Provider>
   );
 }
 

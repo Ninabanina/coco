@@ -10,15 +10,14 @@ const Coord = ({ coord, index }) => {
           {...provided.draggableProps}
           {...provided.dragHandleProps}
           ref={provided.innerRef}
-          className={`${styles.container} ${
-            snapshot.isDragging ? styles.isDragging : styles.notDragging
-          }`}
+          className={`${styles.container} ${snapshot.isDragging ? styles.isDragging : styles.notDragging
+            }`}
         >
           <h3 className={styles.title}>{coord.content}</h3>
-          <ul class={styles.people__list}>
+          <ul className={styles.people__list}>
             {coord.people.map((people, index) => (
               <li
-                class={styles.people__list__item}
+                className={styles.people__list__item}
                 key={`coord-${people}${index}`}
               >
                 {people}

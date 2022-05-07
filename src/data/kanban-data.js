@@ -1,73 +1,61 @@
+export const COLUMN = {
+  BACKLOG: 'Backlog',
+  DOING: 'Doing',
+  COMPLETE: 'Complete',
+}
+
 const kanbanData = {
-  coords: {
-    'coord-1': {
+  filter: '',
+  coords: [
+    {
       id: 'coord-1',
       content: 'GDNSW Annual Report',
       people: ['Sergio', 'Nina', 'Sam'],
+      column: COLUMN.BACKLOG,
     },
-    'coord-2': {
+    {
       id: 'coord-2',
       content: 'GD National SEM',
       people: ['Mike', 'Dan'],
+      column: COLUMN.BACKLOG,
     },
-    'coord-3': {
+    {
       id: 'coord-3',
       content: 'CatchUp Private Groups',
       people: ['Bridget', 'Maikel', 'Vince'],
+      column: COLUMN.BACKLOG,
     },
-    'coord-4': {
+    {
       id: 'coord-4',
       content: 'EE ANZ WIP',
       people: ['Sam', 'Tim C', 'Elliott'],
+      column: COLUMN.BACKLOG,
     },
-    'coord-5': {
+    {
       id: 'coord-5',
       content: 'LinkedIn contact stuff',
       people: ['Isabella', 'Zoe'],
+      column: COLUMN.BACKLOG,
     },
-    'coord-6': {
+    {
       id: 'coord-6',
       content: 'AA Bulk post status update',
       people: ['Seb', 'Sergio'],
+      column: COLUMN.BACKLOG,
     },
-    'coord-7': {
+    {
       id: 'coord-7',
       content: 'reCaptcha question (VSBC)',
       people: ['James', 'Rache', 'Sergio'],
+      column: COLUMN.BACKLOG,
     },
-    'coord-8': {
+    {
       id: 'coord-8',
       content: 'Content process question',
       people: ['Isabella', 'Elliott'],
+      column: COLUMN.BACKLOG,
     },
-  },
-  columns: {
-    'column-1': {
-      id: 'column-1',
-      title: 'Backlog',
-      coordIds: [
-        'coord-1',
-        'coord-2',
-        'coord-3',
-        'coord-4',
-        'coord-5',
-        'coord-6',
-        'coord-7',
-        'coord-8',
-      ],
-    },
-    'column-2': {
-      id: 'column-2',
-      title: 'Doing',
-      coordIds: [],
-    },
-    'column-3': {
-      id: 'column-3',
-      title: 'Done',
-      coordIds: [],
-    },
-  },
-  columnOrder: ['column-1', 'column-2', 'column-3'],
+  ],
 };
 
 export default kanbanData;
