@@ -4,6 +4,7 @@ import { DragDropContext } from 'react-beautiful-dnd';
 import KanbanContext from '../../context/KanbanContext';
 import KanbanColumn from '../KanbanColumn';
 import { COLUMN } from '../../data/kanban-data';
+import supabase from "../../supabaseClient"
 
 import { Layout } from 'antd';
 
@@ -29,6 +30,13 @@ const Kanban = () => {
     // TODO Moving within the same column
     // if (source.droppableId === destination.droppableId) {
     // }
+
+
+    supabase
+      .from('coords')
+      .update({ column: destination.droppableId })
+      .match({ id: parseInt(draggableId, 10) })
+      .then(data => console.log(data))
 
     kanbanDispatch({ type: 'MOVE_COORD', coordId: draggableId, newColumn: destination.droppableId });
   };

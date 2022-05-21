@@ -4,7 +4,7 @@ import { Draggable } from 'react-beautiful-dnd';
 
 const Coord = ({ coord, index }) => {
   return (
-    <Draggable draggableId={coord.id} index={index}>
+    <Draggable draggableId={coord.id.toString()} index={index}>
       {(provided, snapshot) => (
         <div
           {...provided.draggableProps}
