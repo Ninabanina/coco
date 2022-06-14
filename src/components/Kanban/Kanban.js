@@ -36,7 +36,6 @@ const Kanban = () => {
       .from('coords')
       .update({ column: destination.droppableId })
       .match({ id: parseInt(draggableId, 10) })
-      .then(data => console.log(data))
 
     kanbanDispatch({ type: 'MOVE_COORD', coordId: draggableId, newColumn: destination.droppableId });
   };

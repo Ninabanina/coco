@@ -31,9 +31,17 @@ const reducer = (state, action) => {
       };
 
     case 'FILTER_COORD':
-      return {
-        ...state,
-        filter: action.filter,
+      const { filter } = state;
+      if (filter === action.filter) {
+        return {
+          ...state,
+          filter: '',
+        }
+      } else {
+        return {
+          ...state,
+          filter: action.filter,
+        }
       };
     default:
       throw new Error();
