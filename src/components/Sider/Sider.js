@@ -23,25 +23,31 @@ const Sider = () => {
                 className={styles.container}
             >
                 <SubMenu key='blue' icon={<TeamOutlined />} title='Blue team'>
-                    {blueTeamMembers.map((member) => (
-                        <Menu.Item onClick={() => {
-                            kanbanDispatch({ type: 'FILTER_COORD', filter: member.name })
-                        }} key={member.id}>{member.name}</Menu.Item>
-                    ))}
+                    {blueTeamMembers
+                        .sort((a, b) => a.name.localeCompare(b.name))
+                        .map((member) => (
+                            <Menu.Item onClick={() => {
+                                kanbanDispatch({ type: 'FILTER_COORD', filter: member.name })
+                            }} key={member.id}>{member.name}</Menu.Item>
+                        ))}
                 </SubMenu>
                 <SubMenu key='red' icon={<TeamOutlined />} title='Red team'>
-                    {redTeamMembers.map((member) => (
-                        <Menu.Item onClick={() => {
-                            kanbanDispatch({ type: 'FILTER_COORD', filter: member.name })
-                        }} key={member.id}>{member.name}</Menu.Item>
-                    ))}
+                    {redTeamMembers
+                        .sort((a, b) => a.name.localeCompare(b.name))
+                        .map((member) => (
+                            <Menu.Item onClick={() => {
+                                kanbanDispatch({ type: 'FILTER_COORD', filter: member.name })
+                            }} key={member.id}>{member.name}</Menu.Item>
+                        ))}
                 </SubMenu>
                 <SubMenu key='green' icon={<TeamOutlined />} title='Green team'>
-                    {greenTeamMembers.map((member) => (
-                        <Menu.Item onClick={() => {
-                            kanbanDispatch({ type: 'FILTER_COORD', filter: member.name })
-                        }} key={member.id}>{member.name}</Menu.Item>
-                    ))}
+                    {greenTeamMembers
+                        .sort((a, b) => a.name.localeCompare(b.name))
+                        .sort((a, b) => a.name.localeCompare(b.name)).map((member) => (
+                            <Menu.Item onClick={() => {
+                                kanbanDispatch({ type: 'FILTER_COORD', filter: member.name })
+                            }} key={member.id}>{member.name}</Menu.Item>
+                        ))}
                 </SubMenu>
             </Menu>
         </Sider>

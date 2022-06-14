@@ -109,6 +109,21 @@ const members = [
     name: 'Vince',
     team: 'Red',
   },
+  {
+    id: 22,
+    name: 'Harley',
+    team: 'Blue',
+  },
+  {
+    id: 23,
+    name: 'Talor',
+    team: 'Blue',
+  },
+  {
+    id: 24,
+    name: 'Natasha',
+    team: 'Red',
+  },
 ];
 
 const blueTeamMembers = members.filter((member) => member.team === 'Blue');
