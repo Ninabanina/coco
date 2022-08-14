@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import styles from './Sider.module.scss';
 import { Layout, Menu } from 'antd';
-import { members } from '../../data/members';
+import { members, blueTeamMembers, redTeamMembers, greenTeamMembers } from '../../data/members';
 import { TeamOutlined } from '@ant-design/icons';
 import { useKanbanContext } from '../../context/KanbanContext';
 
@@ -10,13 +10,8 @@ const Sider = () => {
     const { SubMenu } = Menu;
     const { kanbanDispatch, kanbanState } = useKanbanContext();
 
-    const blueTeamMembers = members.filter((member) => member.team === 'Blue');
-    const redTeamMembers = members.filter((member) => member.team === 'Red');
-    const greenTeamMembers = members.filter((member) => member.team === 'Green');
-
     return (
         <Sider className='site-layout-background' width={200}>
-            <div className='logo' />
             <Menu
                 theme='dark'
                 mode='inline'
@@ -25,8 +20,6 @@ const Sider = () => {
             >
                 <SubMenu key='blue' icon={<TeamOutlined />} title='Blue team'>
                     {blueTeamMembers
-                        .slice(0)
-                        .sort((a, b) => a.name.localeCompare(b.name))
                         .map((member) => (
                             <Menu.Item onClick={() => {
                                 kanbanDispatch({ type: 'FILTER_COORD', filter: member.name })
@@ -35,8 +28,6 @@ const Sider = () => {
                 </SubMenu>
                 <SubMenu key='red' icon={<TeamOutlined />} title='Red team'>
                     {redTeamMembers
-                        .slice(0)
-                        .sort((a, b) => a.name.localeCompare(b.name))
                         .map((member) => (
                             <Menu.Item onClick={() => {
                                 kanbanDispatch({ type: 'FILTER_COORD', filter: member.name })
@@ -45,8 +36,6 @@ const Sider = () => {
                 </SubMenu>
                 <SubMenu key='green' icon={<TeamOutlined />} title='Green team'>
                     {greenTeamMembers
-                        .slice(0)
-                        .sort((a, b) => a.name.localeCompare(b.name))
                         .map((member) => (
                             <Menu.Item onClick={() => {
                                 kanbanDispatch({ type: 'FILTER_COORD', filter: member.name })

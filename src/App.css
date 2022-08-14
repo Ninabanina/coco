@@ -39,3 +39,7 @@
   margin: 10px;
   border-radius: 10px;
 }
+
+.ant-layout-sider-children {
+  background: #001529;
+}

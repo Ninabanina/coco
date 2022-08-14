@@ -1,133 +1,140 @@
+export const TEAM = {
+  BLUE: 'Blue',
+  RED: 'Red',
+  GREEN: 'Green',
+}
+
+
 const members = [
   {
     id: 0,
     name: 'Isabella',
-    team: 'Blue',
+    team: TEAM.BLUE,
   },
   {
     id: 1,
     name: 'James',
-    team: 'Blue',
+    team: TEAM.BLUE,
   },
   {
     id: 2,
     name: 'Jeremy',
-    team: 'Blue',
+    team: TEAM.BLUE,
   },
   {
     id: 3,
     name: 'Mike',
-    team: 'Blue',
+    team: TEAM.BLUE,
   },
   {
     id: 4,
     name: 'Nina',
-    team: 'Blue',
+    team: TEAM.BLUE,
   },
   {
     id: 5,
     name: 'Rach',
-    team: 'Blue',
+    team: TEAM.BLUE,
   },
   {
     id: 6,
     name: 'Sam',
-    team: 'Blue',
+    team: TEAM.BLUE,
   },
   {
     id: 7,
     name: 'Seb',
-    team: 'Blue',
+    team: TEAM.BLUE,
   },
   {
     id: 8,
     name: 'Sergio',
-    team: 'Blue',
+    team: TEAM.BLUE,
   },
   {
     id: 9,
     name: 'Timocles',
-    team: 'Blue',
+    team: TEAM.BLUE,
   },
   {
     id: 10,
     name: 'Sarah',
-    team: 'Green',
+    team: TEAM.GREEN,
   },
   {
     id: 11,
     name: 'Dan',
-    team: 'Green',
+    team: TEAM.GREEN,
   },
   {
     id: 12,
     name: 'Zoe',
-    team: 'Green',
+    team: TEAM.GREEN,
   },
   {
     id: 13,
     name: 'Bridget',
-    team: 'Red',
+    team: TEAM.RED,
   },
   {
     id: 14,
     name: 'Elliott',
-    team: 'Red',
+    team: TEAM.RED,
   },
   {
     id: 15,
     name: 'Isabel',
-    team: 'Red',
+    team: TEAM.RED,
   },
   {
     id: 16,
     name: 'Jon',
-    team: 'Red',
+    team: TEAM.RED,
   },
   {
     id: 17,
     name: 'Kurt',
-    team: 'Red',
+    team: TEAM.RED,
   },
   {
     id: 18,
     name: 'Maikel',
-    team: 'Red',
+    team: TEAM.RED,
   },
   {
     id: 19,
     name: 'Matt',
-    team: 'Red',
+    team: TEAM.RED,
   },
   {
     id: 20,
     name: 'Tim H',
-    team: 'Red',
+    team: TEAM.RED,
   },
   {
     id: 21,
     name: 'Vince',
-    team: 'Red',
+    team: TEAM.RED,
   },
   {
     id: 22,
     name: 'Harley',
-    team: 'Blue',
+    team: TEAM.BLUE,
   },
   {
     id: 23,
     name: 'Talor',
-    team: 'Blue',
+    team: TEAM.BLUE,
   },
   {
     id: 24,
     name: 'Natasha',
-    team: 'Red',
+    team: TEAM.RED,
   },
 ];
 
-const blueTeamMembers = members.filter((member) => member.team === 'Blue');
-const redTeamMembers = members.filter((member) => member.team === 'Red');
-const greenTeamMembers = members.filter((member) => member.team === 'Green');
+const blueTeamMembers = members.filter((member) => member.team === TEAM.BLUE).sort((a, b) => a.name.localeCompare(b.name));
+const redTeamMembers = members.filter((member) => member.team === TEAM.RED).sort((a, b) => a.name.localeCompare(b.name));
+const greenTeamMembers = members.filter((member) => member.team === TEAM.GREEN).sort((a, b) => a.name.localeCompare(b.name));
 
 export { members, blueTeamMembers, redTeamMembers, greenTeamMembers };
